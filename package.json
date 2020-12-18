@@ -1,0 +1,19 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "安装命令：npm install cypress --save-dev\r 运行报错：cypress\\node_modules\\.bin目录下的cypress文件删除掉，新建一个同名文件夹cypress即可",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^4.8.0"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^4.1.1",
+    "start-server-and-test": "^1.11.6"
+  },
+  "scripts": {
+    "cypress": "cypress run --headless",
+    "test": "start-server-and-test serve http://localhost:8080 cypress"
+  },
+  "author": "黄振宇",
+  "license": "ISC"
+}
