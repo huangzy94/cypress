@@ -19,11 +19,11 @@ describe('餐饮单位',function(){                                // 测试套�
         
         // 工作台-待办事项
         cy.get('.TodoListCard___1PvmG > :nth-child(3)')
-                .should('have.contain','待采购菜单').click().wait(500)
+                .should('have.contain','待采购菜单').click().wait(700)
                 cy.contains('工作台').click()
 
         cy.get('.TodoListCard___1PvmG > :nth-child(5)')
-                .should('have.contain','待下单').click().wait(500)
+                .should('have.contain','待下单').click().wait(700)
                 cy.contains('工作台').click()  
 
         cy.get('.TodoListCard___1PvmG > :nth-child(7)')  
@@ -31,7 +31,7 @@ describe('餐饮单位',function(){                                // 测试套�
                 cy.contains('工作台').click()  
 
         cy.get('.TodoListCard___1PvmG > :nth-child(9)')  
-                .should('have.contain','待验收').click().wait(500)
+                .should('have.contain','待验收').click().wait(700)
                 cy.contains('工作台').click()      
     })
 
@@ -41,7 +41,7 @@ describe('餐饮单位',function(){                                // 测试套�
         cy.get('.cgml___3VSsK')
           .should('have.text','采购目录').click()  
             cy.get('.ant-radio-group > :nth-child(2)').click()        // 按类型type='S/F'筛选
-              cy.get('.ant-radio-group > :nth-child(3)').click().wait(500)
+              cy.get('.ant-radio-group > :nth-child(3)').click().wait(700)
               cy.contains('工作台').click()
 
         // 本月台账
@@ -51,7 +51,7 @@ describe('餐饮单位',function(){                                // 测试套�
                                   
         // cy.contains('人员管理')
         //   .should('have.contain','人员管理').click()                   // SKU详情
-        //     cy.get('.ant-btn').click().wait(500)                      // 食材详情返回至采购目录
+        //     cy.get('.ant-btn').click().wait(700)                      // 食材详情返回至采购目录
             // .should('have.contain','采购目录')                    
               // cy.get('.ant-btn').click()                              // 采购目录返回至工作台
             // .should('have.contain','工作台')
@@ -91,7 +91,7 @@ describe('餐饮单位',function(){                                // 测试套�
           cy.get('[aria-selected="false"]')                              // 明日验收
             .should('have.contain','明日验收').click()
             cy.get('.extra___3YNLd')                                     // 查看全部
-              .should('have.contain','查看全部').click().wait(500)
+              .should('have.contain','查看全部').click().wait(700)
               cy.get(':nth-child(2) > a')
                 .should('have.text','工作台').click()  
 
@@ -120,7 +120,7 @@ describe('餐饮单位',function(){                                // 测试套�
       it('菜单中心-我的菜单',function(){
         cy.get(':nth-child(4) > a')                                        // 菜单中心模块
           .should('have.contain','菜单中心').click()
-          cy.wait(500)
+          cy.wait(700)
           cy.get('.ant-tabs-nav > :nth-child(1) > :nth-child(2)')          // 我的菜单tab页
             .should('have.contain','我的菜单').click()
             cy.get('.ant-btn').click()                                     // 新建自定义菜单
@@ -167,15 +167,15 @@ describe('餐饮单位',function(){                                // 测试套�
               // 复制餐次
               cy.get('[rowspan="2"] > :nth-child(1) > .anticon > svg > path')
                 .click()
-                cy.wait(500)
+                cy.wait(700)
                 cy.get('[title="周六"]').click()                                // 复制到该周次
-                cy.wait(500)
+                cy.wait(700)
                   cy.get('[title="早餐"]').click()
                     //   .then(() => {
                     //   expect(stub.getCall(0)).to.be.calledWith('复制成功')
                     // })
                   cy.get('[data-row-key="22"] > :nth-child(6) > a')             // 删除添加的菜品
-                    .click().wait(500)
+                    .click().wait(700)
                     cy.get('.ant-popover-buttons > .ant-btn-primary')
                       .click()
                       cy.get('.footerBtn___3l1nk > :nth-child(2)')              // 保存菜单
@@ -186,7 +186,7 @@ describe('餐饮单位',function(){                                // 测试套�
 
               // 查看菜单详情
               cy.get('.ant-radio-group > :nth-child(2)').click()                // 查看配料&图片
-              cy.wait(500)
+              cy.wait(700)
                 // cy.contains('导 出').click()
                 //   cy.wait(300)
                 // cy.contains('仅菜单').click()
@@ -194,17 +194,17 @@ describe('餐饮单位',function(){                                // 测试套�
                 //     cy.wait(300)
                 //   cy.contains('仅菜单').click()
                 cy.get('[style="text-align: right;"] > :nth-child(2)')          // 删除菜单
-                  .click().wait(500)
+                  .click().wait(700)
                   cy.get('.ant-popover-buttons > .ant-btn-primary')
                     .click()
-                    cy.wait(500)
+                    cy.wait(700)
 
               // 模板导入生成菜单
               cy.get('.ant-btn').click()                                     
               cy.contains('模板导入').click()
                 cy.get('[style="margin-left: -8px; margin-right: -8px;"] > :nth-child(1) > .ant-list-item > .ant-card')
                   .rightclick()                                                  // 鼠标悬浮
-                cy.wait(500)
+                cy.wait(700)
                 cy.log('模拟鼠标悬浮动作')
                   cy.contains('查看详情').click()
                   cy.get('#yieldMenu').click()                                   // 使用模板
@@ -236,7 +236,7 @@ describe('餐饮单位',function(){                                // 测试套�
                 cy.get('#remark').type('cypress脚本生成订单')
                   cy.get('.ant-modal-footer > div > .ant-btn-primary')
                     .click()
-                cy.contains('删 除').click().wait(500)
+                cy.contains('删 除').click().wait(700)
                   cy.get('.ant-popover-buttons > .ant-btn-primary')
                     .click()
     })
@@ -244,10 +244,10 @@ describe('餐饮单位',function(){                                // 测试套�
       it('菜单中心-菜单模板',function(){
         cy.get(':nth-child(4) > a')                                        // 菜单中心模块
           .should('have.contain','菜单中心').click()
-          cy.wait(500)
+          cy.wait(700)
           cy.get('.ant-tabs-nav > :nth-child(1) > :nth-child(2)')          // 我的菜单tab页
             .should('have.contain','我的菜单').click().wait(300)
-            cy.contains('删除').click().wait(500)
+            cy.contains('删除').click().wait(700)
             cy.get('.ant-popover-buttons > .ant-btn-primary').click()      // 删除模板导入生成的菜单
 
         // 菜单模板
@@ -271,14 +271,14 @@ describe('餐饮单位',function(){                                // 测试套�
                 .click()
                 cy.get('[style="text-align: right;"] > .ant-btn-primary')
                 .click().wait(300)
-                cy.contains('保 存').click().wait(500)
+                cy.contains('保 存').click().wait(700)
                 cy.contains('返 回').click()
 
           // 鼠标悬浮
           cy.get(':nth-child(1) > .ant-list-item > .ant-spin-nested-loading > .ant-spin-container > .ant-card')
             .should('have.contain','cypress automated testing').rightclick()
-            cy.wait(500)
-            cy.contains('删除').click().wait(500)
+            cy.wait(700)
+            cy.contains('删除').click().wait(700)
               cy.get('.ant-popover-buttons > .ant-btn-primary')
                 .click()
                 cy.get(':nth-child(2) > .ant-badge > :nth-child(1)')
@@ -288,7 +288,7 @@ describe('餐饮单位',function(){                                // 测试套�
       it.skip('菜单中心-套餐维护',function(){
         cy.get(':nth-child(4) > a')                                        // 菜单中心模块
           .should('have.contain','菜单中心').click()
-          cy.wait(500)
+          cy.wait(700)
           cy.get('.ant-tabs-nav > :nth-child(1) > :nth-child(4)')          // 套餐维护
             .should('have.text','套餐维护').click()
             cy.get('.ant-btn').click()
@@ -330,19 +330,19 @@ describe('餐饮单位',function(){                                // 测试套�
         cy.get('[style="margin-left: -12px; margin-right: -12px; margin-top: 10px;"] > :nth-child(2) > .anticon > svg > path')
           .click()
           cy.get('#remark').type('cypress脚本生成订单')
-          cy.get('.ant-modal-footer > div > .ant-btn-primary').click().wait(500)
+          cy.get('.ant-modal-footer > div > .ant-btn-primary').click().wait(700)
 
         // 下单
-        cy.contains('下 单').click().wait(500)
+        cy.contains('下 单').click().wait(700)
           cy.get('.ant-popover-buttons > .ant-btn-primary')                 // 二次确认
             .click()
             cy.contains('返 回').click()
     })
 
-      it.only('采购订单',function(){
+      it('采购订单',function(){
         // 自建订单
         cy.contains('采购订单').click()                                      // 进入采购订单模块
-        cy.get('.ant-btn').click()
+        cy.get('.ant-btn').click().wait(700)
         cy.get('.ant-tabs-tabpane-active > .ant-btn').click()
 
         // 筛选条件
@@ -386,38 +386,37 @@ describe('餐饮单位',function(){                                // 测试套�
           cy.get('.ant-modal-footer > div > .ant-btn-primary').click()
         
         // 下单
-        cy.get('[style="text-align: right;"] > .ant-btn-primary').click().wait(500)
+        cy.get('[style="text-align: right;"] > .ant-btn-primary').click().wait(700)
           cy.get('.ant-popover-buttons > .ant-btn-primary').click()
 
         // 查看配送验收情况
         cy.contains('查看配送验收情况').click()
           cy.contains('-0101').click()
-          cy.get('.ant-popover-buttons > .ant-btn-primary').click()
 
         // 取消配送第一张配送单0101
         cy.get('.ant-page-header-heading-extra > :nth-child(1) > [style="margin-right: 10px;"]')
-          .click().wait(500)
+          .click().wait(700)
           cy.get('.ant-popover-buttons > .ant-btn-primary').click()
 
         // 取消配送第二张配送单0102
         cy.contains('查看配送验收情况').click()
         cy.contains('-0102').click()
         cy.get('.ant-page-header-heading-extra > :nth-child(1) > [style="margin-right: 10px;"]')
-          .click().wait(500)
+          .click().wait(700)
           cy.get('.ant-popover-buttons > .ant-btn-primary').click()
 
         // 取消配送第三张配送单0103
         cy.contains('查看配送验收情况').click()
         cy.contains('-0103').click()
         cy.get('.ant-page-header-heading-extra > :nth-child(1) > [style="margin-right: 10px;"]')
-          .click().wait(500)
+          .click().wait(700)
           cy.get('.ant-popover-buttons > .ant-btn-primary').click()
 
         // 取消全部配送单
-        cy.contains('查看配送验收情况').click()
-        cy.get('.ant-table-row-cell-break-word > a').click().wait(300)
+        cy.contains('查看配送验收情况').click().wait(700)
+        cy.get('.ant-table-row-cell-break-word > a').click().wait(700)
         cy.get('.ant-page-header-heading-extra > :nth-child(1) > [style="margin-right: 10px;"]')   // 取消配送单
-          .click().wait(500)
+          .click().wait(700)
           cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click()
     })
 
@@ -435,7 +434,7 @@ describe('餐饮单位',function(){                                // 测试套�
             cy.get('.ant-btn-primary').click()                                               // 保存
               cy.log('校验商品数量不能为0的限制')
               cy.get('[data-row-key="1"] > :nth-child(4) > :nth-child(1)')
-                .click().wait(500)
+                .click().wait(700)
                 cy.log('删除数量为0的商品')
                 cy.get('.ant-popover-buttons > .ant-btn-primary')
                   .click()
@@ -452,11 +451,11 @@ describe('餐饮单位',function(){                                // 测试套�
               cy.get('.ant-cascader-menu-item-expand').click()                                // 不合格
               cy.get(':nth-child(2) > .ant-cascader-menu-item-expand').click()                // 退货
               cy.get('[title="商品变质破损"]').click()
-              cy.scrollTo(0, 500)
+              // cy.scrollTo(0, 700)                                                          // 操作滚动条
               cy.get('.gradeList___V2JXx > :nth-child(1)').click()                            // 配送评价
               cy.get('.ant-btn-primary').click()
               cy.get('.ant-modal-confirm-btns > .ant-btn-primary')
-                .click().wait(500)                                                            // 完成验收
+                .click().wait(700)                                                            // 完成验收
                 cy.get('.ant-breadcrumb-link > a').click()                                    // 配送验收面包屑
     })
 
@@ -475,26 +474,26 @@ describe('餐饮单位',function(){                                // 测试套�
                 cy.get('[title="九月"] > .ant-calendar-month-panel-month').click()
                   cy.get('[title="2019年9月1日"] > .ant-calendar-date').click()
                   cy.get('[title=' + localYMD + '] > .ant-calendar-date').click()
-                  cy.get('.ant-card-extra > .ant-btn').click().wait(500)                      // 查询
+                  cy.get('.ant-card-extra > .ant-btn').click().wait(700)                      // 查询
                   cy.get('.footer___2OksX > .ant-btn-primary').click()                        // 生成结算单
 
         // 发送&撤回结算单
         cy.get('[data-row-key="0"] > :nth-child(8) > .control-active').click()
-          .wait(500)
-            cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click().wait(500)
+          .wait(700)
+            cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click().wait(1000)
         cy.contains('撤回').click()
-          .wait(500)
+          .wait(700)
 
         // 删除结算单
-            cy.get('.ant-popover-buttons > .ant-btn-primary').click().wait(500)
+            cy.get('.ant-popover-buttons > .ant-btn-primary').click().wait(700)
         cy.contains('删除').click()
-            cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click().wait(500)
+            cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click().wait(700)
         cy.contains('删除').click()
-            cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click().wait(500)
+            cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click().wait(700)
         cy.contains('删除').click()
-            cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click().wait(500)
+            cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click().wait(700)
         cy.contains('删除').click()
-          .wait(500)
+          .wait(700)
             cy.get('.ant-modal-confirm-btns > .ant-btn-primary').click()
 
     })
