@@ -3,14 +3,14 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        println "Build"
+        bat 'npm install'
         
       }
     }
   stages {
     stage('Test') {
       steps {
-         println "Test"
+         bat 'npm run test'
       }
     }
   stages {
