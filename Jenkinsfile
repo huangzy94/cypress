@@ -1,14 +1,15 @@
+
 pipeline {
     agent any
     stages {
         stage('Build') {
             steps {
-                println "Build"
+                bat 'npm install'
             }
         }
         stage('Test') {
             steps {
-                println "Test"
+                bat 'npm run test'
             }
         }
         stage('Deploy') {
