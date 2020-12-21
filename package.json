@@ -8,10 +8,12 @@
   },
   "devDependencies": {
     "cypress-file-upload": "^4.1.1",
+    "mocha": "^8.2.1",
+    "mochawesome": "^6.2.1",
     "start-server-and-test": "^1.11.6"
   },
   "scripts": {
-    "cypress": "cypress run --headless",
+    "cypress": "cypress run",
     "test": "start-server-and-test serve http://ap-catering.td.com/ cypress"
   },
   "author": "黄振宇",

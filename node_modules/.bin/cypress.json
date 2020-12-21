@@ -1,4 +1,9 @@
 {
   "projectId": "ity4o6",
-  "baseUrl": "http://ap-catering.td.com"
+  "baseUrl": "http://ap-catering.td.com",
+  "integrationFolder": "cypress/integration",
+  "reporterOptions": {
+    "mochaFile": "cypress/reports/Automated_Testing.js",
+    "toConsole": true
+	}
 }
