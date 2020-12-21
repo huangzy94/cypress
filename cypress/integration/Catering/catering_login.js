@@ -11,7 +11,7 @@ describe('餐饮单位',function(){                                // 测试套�
       var localYear = myDate.getFullYear() + "年"
       var lastMouth = myDate.getMonth() + "月"                                              // 获取上月月份
       var localMouth = (myDate.getMonth()+1) + "月"                                         // 获取本月月份
-      var beforYesterday = (myDate.getDay()-2) + "日"                                       // 获取前天日期
+      var beforYesterday = (myDate.getDate()-2) + "日"                                       // 获取前天日期
       var localYMD = localYear + localMouth + beforYesterday
 
       it('工作台-待办事项',function(){                       // it 代表一个测试用例，it.skip代表跳过该用例，it.only代表仅执行该用例
@@ -324,7 +324,25 @@ describe('餐饮单位',function(){                                // 测试套�
         cy.get('.createOrder___1IWsJ').click().wait(300)
           cy.get('.ant-select-selection__rendered').click()                 // 选择供货商
           cy.contains('绿蔬').click()
-          cy.get('.ant-btn-primary').click().wait(600)                      // 生成订单
+
+        // 添加其他日期
+        cy.get('.ant-tabs-extra-content > .ant-btn').click()
+        cy.get('.ant-modal-footer > div > .ant-btn-primary').click()
+            cy.get('.ant-tabs-tabpane-active > .ant-btn').click()           // 添加
+
+        // 筛选条件
+        cy.get('.ant-cascader-picker-label').click()
+          cy.get('[title="水果"]').click()
+          cy.get('[title="核果仁果类"]').click()
+          cy.get('.ant-form-item-children > .ant-btn').click()
+          cy.get('[data-row-key="e03410d34487e0e87789045a044c47f8"] > :nth-child(5) > div > a')
+            .click()
+            cy.get('[style="text-align: right;"] > .ant-btn-primary').click()
+
+        // 采购数量
+        cy.get('[data-row-key="2"] > :nth-child(4) > :nth-child(1) > .ant-input-number > .ant-input-number-input-wrap > .ant-input-number-input')
+          .type(20)
+          cy.contains("保 存").click().wait(600)                      // 生成订单
 
         // 备注
         cy.get('[style="margin-left: -12px; margin-right: -12px; margin-top: 10px;"] > :nth-child(2) > .anticon > svg > path')
@@ -422,8 +440,8 @@ describe('餐饮单位',function(){                                // 测试套�
 
       it('配送验收',function(){
         // 进入配送验收模块
-        cy.contains('配送验收').click()
-          cy.get('.ant-tabs-tab-active').click()                                             // 待配送TAB
+        cy.contains('配送验收').click().wait(500)
+        cy.get('.ant-tabs-nav > :nth-child(1) > :nth-child(1)').click()                      // 待配送TAB
           cy.get('.ant-radio-group > :nth-child(2)').click()                                 // 选择今日待验收
           cy.get('.ant-select-selection__rendered').click()
           cy.contains('绿蔬').click()
@@ -460,7 +478,7 @@ describe('餐饮单位',function(){                                // 测试套�
     })
 
       it('结算管理',function(){
-
+        cy.log(beforYesterday)
         cy.get(':nth-child(12) > a').click()
           cy.get('.ant-btn').click()                                                          // 生成结算单
             cy.get('.ant-select-selection__placeholder').click()
