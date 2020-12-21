@@ -10,7 +10,12 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'npm run test'
-            }
+			script{
+			allure([
+			allure includeProperties: false, jdk: '', results: [[path: 'cypress/reports']]
+			])
+			}
+           }
         }
         stage('Deploy') {
             steps {
