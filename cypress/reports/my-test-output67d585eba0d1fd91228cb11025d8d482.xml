@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="96.5260" tests="13" failures="0" skipped="2">
+  <testsuite name="Root Suite" timestamp="2020-12-22T03:31:08" tests="0" file="cypress\integration\Catering\catering_login.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="餐饮单位" timestamp="2020-12-22T03:31:08" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="工作台功能测试" timestamp="2020-12-22T03:31:08" tests="13" time="96.5260" failures="0">
+    <testcase name="餐饮单位 工作台功能测试 工作台-待办事项" time="7.8740" classname="工作台-待办事项">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 工作台-常用工具" time="3.4140" classname="工作台-常用工具">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 工作台-验收情况" time="2.7180" classname="工作台-验收情况">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 菜单中心-统一菜单" time="2.0910" classname="菜单中心-统一菜单">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 菜单中心-我的菜单" time="19.8240" classname="菜单中心-我的菜单">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 菜单中心-菜单模板" time="9.3880" classname="菜单中心-菜单模板">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 辅料超市" time="7.7950" classname="辅料超市">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 采购订单" time="20.5030" classname="采购订单">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 配送验收" time="7.4420" classname="配送验收">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 结算管理" time="12.1000" classname="结算管理">
+    </testcase>
+    <testcase name="餐饮单位 工作台功能测试 查询统计" time="3.3770" classname="查询统计">
+    </testcase>
+  </testsuite>
+</testsuites>
