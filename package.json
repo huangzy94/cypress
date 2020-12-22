@@ -14,7 +14,7 @@
   },
   "scripts": {
     "cypress": "cypress run",
-    "test": "start-server-and-test http://ap-catering.td.com/ cypress"
+    "test": "start-server-and-test http://ap-catering.uanla.com/ cypress"
   },
   "author": "黄振宇",
   "license": "ISC"
