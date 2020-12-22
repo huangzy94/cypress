@@ -24,7 +24,4 @@ pipeline {
             }
         }
     }
-	tools {
-		Node.js 'Node.js 13'
-	}
 }
