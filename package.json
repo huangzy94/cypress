@@ -4,7 +4,7 @@
   "description": "安装命令：npm install cypress --save-dev\r    cypress run是以无头浏览器模式跑测试用例文件夹下的所有测试用例\r    cypress open  会打开测试用例集的界面，需要手动运行",
   "main": "index.js",
   "dependencies": {
-    "cypress": "^4.8.0"
+    "cypress": "^6.2.0"
   },
   "devDependencies": {
     "cypress-file-upload": "^4.1.1",
@@ -13,9 +13,10 @@
     "start-server-and-test": "^1.11.6"
   },
   "scripts": {
-    "cypress": "cypress run --reporter junit --reporter-options 'mochaFile=reports/automated_testing[hash].xml,toConsole=true'",
+    "cypress": "cypress run --reporter junit --reporter-options 'mochaFile=junit-results/my-test-output.xml'",
+	"test": "start-server-and-test serve http://ap-catering.td.com/ cypress",
 	"debug": "cypress open"
   },
-  "author": "黄振宇",
+  "author": "hzy",
   "license": "ISC"
 }
