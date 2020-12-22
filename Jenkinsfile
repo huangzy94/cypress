@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'npm install'
+                bat 'npm i'
+				echo 'build process'
             }
         }
         stage('Test') {
@@ -23,4 +24,7 @@ pipeline {
             }
         }
     }
+	tools {
+		Node.js 'Node.js 13'
+	}
 }
