@@ -13,8 +13,7 @@
     "start-server-and-test": "^1.11.6"
   },
   "scripts": {
-    "cypress": "cypress run",
-    "test": "start-server-and-test http://ap-catering.uanla.com/ cypress"
+    "cypress": "cypress run"
   },
   "author": "黄振宇",
   "license": "ISC"
