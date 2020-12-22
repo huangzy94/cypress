@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'npm run test'
+                bat 'npm run cypress'
 				junit 'reports/automated_testing_[hash].xml'
 				archiveArtifacts 'cypress/videos/Catering/*.mp4'
 			script{
