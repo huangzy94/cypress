@@ -245,7 +245,7 @@ describe('餐饮单位',function(){                                // 测试套�
           .should('have.contain','菜单中心').click()
           cy.wait(700)
           cy.get('.ant-tabs-nav > :nth-child(1) > :nth-child(2)')          // 我的菜单tab页
-            .should('have.contain','我的菜单').click().wait(300)
+            .should('have.contain','我的菜单').click().wait(500)
             cy.contains('删除').click().wait(700)
             cy.get('.ant-popover-buttons > .ant-btn-primary').click()      // 删除模板导入生成的菜单
 
