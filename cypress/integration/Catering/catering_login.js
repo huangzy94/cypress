@@ -92,7 +92,7 @@ describe('餐饮单位',function(){                                // 测试套�
             .should('have.contain','明日验收').click()
             cy.get('.extra___3YNLd')                                     // 查看全部
               .should('have.contain','查看全部').click().wait(700)
-              cy.get(':nth-child(2) > a').click()  
+              cy.contains('工作台').click()  
 
         // 应付款统计分析
         cy.get('.ant-radio-group > :nth-child(2)')  
@@ -356,11 +356,12 @@ describe('餐饮单位',function(){                                // 测试套�
             cy.contains('返 回').click()
     })
 
-      it('采购订单',function(){
+      it.only('采购订单',function(){
         // 自建订单
         cy.contains('采购订单').click()                                      // 进入采购订单模块
-        cy.get('.ant-btn').click().wait(700)
-        cy.get('.ant-tabs-tabpane-active > .ant-btn').click()
+        cy.get('.ant-btn').should("have.contain","新建").click()
+          .wait(700)
+          cy.get('.ant-tabs-tabpane-active > .ant-btn').click()
 
         // 筛选条件
         cy.get('.ant-cascader-picker-label').click()
