@@ -356,7 +356,7 @@ describe('餐饮单位',function(){                                // 测试套�
             cy.contains('返 回').click()
     })
 
-      it.only('采购订单',function(){
+      it('采购订单',function(){
         // 自建订单
         cy.contains('采购订单').click()                                      // 进入采购订单模块
         cy.get('.ant-btn').should("have.contain","新建").click()

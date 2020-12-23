@@ -11,11 +11,11 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'npm run test'
-				archiveArtifacts 'mochawesome-report/*.html'
+				archiveArtifacts 'mochawesome-report'
                 echo 'e2e test process'
 			script{
 			allure([
-			includeProperties: false, jdk: '', results: [[path: 'mochawesome-report']]
+			includeProperties: false, jdk: '', results: [[path: 'allure-report']]
 			])
 			}
            }
