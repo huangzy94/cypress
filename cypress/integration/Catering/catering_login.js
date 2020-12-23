@@ -93,7 +93,7 @@ describe('餐饮单位',function(){                                // 测试套�
             cy.get('.extra___3YNLd')                                     // 查看全部
               .should('have.contain','查看全部').click().wait(700)
               cy.get(':nth-child(2) > a')
-                .should('have.text','工作台').click()  
+                .should('have.contain','工作台').click()  
 
         // 应付款统计分析
         cy.get('.ant-radio-group > :nth-child(2)')  
@@ -442,7 +442,7 @@ describe('餐饮单位',function(){                                // 测试套�
         // 进入配送验收模块
         cy.contains('配送验收').click().wait(500)
         cy.get('.ant-tabs-nav > :nth-child(1) > :nth-child(1)').click()                      // 待配送TAB
-          cy.get('.ant-radio-group > :nth-child(2)').click()                                 // 选择今日待验收
+          cy.get('.ant-radio-group > :nth-child(2)').click()                                 // 选择今日待配送
           cy.get('.ant-select-selection__rendered').click()
           cy.contains('绿蔬').click()
           cy.contains('-01').click()
