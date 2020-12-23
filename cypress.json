@@ -1,9 +1,11 @@
 {
   "projectId": "ity4o6",
   "baseUrl": "http://ap-catering.td.com",
-  "reporter": "junit",
+  "reporter": "mochawesome",
   "reporterOptions": {
-    "mochaFile": "reports/automated_testing_[hash].xml",
-    "toConsole": true
+    "mochaFile": "reports",
+    "overwrite": false,
+    "html": true,
+    "json": true
   }
 }

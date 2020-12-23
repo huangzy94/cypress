@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-12-23T03:08:22.375Z",
+    "end": "2020-12-23T03:08:27.749Z",
+    "duration": 5374,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4d384317-291e-4c6f-aeab-d03f51553123",
+      "title": "",
+      "fullFile": "cypress\\integration\\Catering\\catering_login.js",
+      "file": "cypress\\integration\\Catering\\catering_login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "993be230-851f-4ce8-bc1d-27683c4144a8",
+          "title": "餐饮单位",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "a248c1be-e94f-4722-9402-c3ff8b62398e",
+              "title": "工作台功能测试",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "查询统计",
+                  "fullTitle": "餐饮单位 工作台功能测试 查询统计",
+                  "timedOut": null,
+                  "duration": 5358,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// 进入查询统计模块\ncy.get(':nth-child(14) > a').click();\ncy.get('[placeholder=\"开始日期\"]').click();\ncy.contains(localYear).click();\ncy.get('.ant-calendar-year-panel-last-decade-cell > .ant-calendar-year-panel-year').click();\ncy.get('[title=\"2019\"] > .ant-calendar-year-panel-year').click();\ncy.contains(lastMouth).click();\ncy.get('[title=\"九月\"] > .ant-calendar-month-panel-month').click();\ncy.get('[title=\"2019年9月1日\"] > .ant-calendar-date').click();\ncy.get('[title=' + localYMD + '] > .ant-calendar-date').click(); // 查询台账详情\ncy.contains('绿蔬集团').click();\ncy.get(':nth-child(1) > .ant-list-item > .ant-list-item-action > li > span').click(); // 展开\ncy.get(':nth-child(1) > .ant-list-item > .parameterDetailList___1a5d9 > :nth-child(2) > a').click(); // 跳转到验收单详情",
+                  "err": {},
+                  "uuid": "84b92b37-12be-48dc-84e9-c619985861ea",
+                  "parentUUID": "a248c1be-e94f-4722-9402-c3ff8b62398e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "84b92b37-12be-48dc-84e9-c619985861ea"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5358,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "mochaFile": "reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
