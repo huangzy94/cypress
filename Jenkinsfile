@@ -6,12 +6,15 @@ pipeline {
             steps {
                 bat 'npm i'
 				echo 'build process'
+                echo "branch: ${env.BRANCH_NAME}"
+                echo "current SHA: ${env.GIT_COMMIT}"
+                echo "previous SHA: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}"script
             }
         }
         stage('Test') {
             steps {
                 bat 'npm run test'
-				archiveArtifacts 'cypress/videos/Catering/*.mp4'
+				archiveArtifacts 'mochawesome-report/*.html'
                 echo 'e2e test process'
 			script{
 			allure([

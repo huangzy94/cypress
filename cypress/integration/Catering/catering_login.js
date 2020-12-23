@@ -92,8 +92,7 @@ describe('餐饮单位',function(){                                // 测试套�
             .should('have.contain','明日验收').click()
             cy.get('.extra___3YNLd')                                     // 查看全部
               .should('have.contain','查看全部').click().wait(700)
-              cy.get(':nth-child(2) > a')
-                .should('have.contain','工作台').click()  
+              cy.get(':nth-child(2) > a').click()  
 
         // 应付款统计分析
         cy.get('.ant-radio-group > :nth-child(2)')  
