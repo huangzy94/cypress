@@ -3,7 +3,7 @@
   "baseUrl": "http://ap-catering.td.com",
   "reporter": "mochawesome",
   "reporterOptions": {
-    "mochaFile": "reports",
+    "mochaFile": "mochawesome-report",
     "overwrite": false,
     "html": true,
     "json": true

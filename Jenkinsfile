@@ -15,7 +15,7 @@ pipeline {
                 echo 'e2e test process'
 			script{
 			allure([
-			includeProperties: false, jdk: '', results: [[path: 'allure-report']]
+			includeProperties: false, jdk: '', results: [[path: 'mochawesome-report']]
 			])
 			}
            }
