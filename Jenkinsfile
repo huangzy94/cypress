@@ -6,8 +6,6 @@ pipeline {
             steps {
                 bat 'npm i'
 				echo 'build process'
-                echo "branch: ${env.BRANCH_NAME}"
-                echo "current SHA: ${env.GIT_COMMIT}"
             }
         }
         stage('Test') {
