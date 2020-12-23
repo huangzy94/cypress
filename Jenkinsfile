@@ -15,7 +15,7 @@ pipeline {
 				archiveArtifacts 'cypress/videos/Catering/*.mp4'
 			script{
 			allure([
-			includeProperties: false, jdk: '', results: [[path: 'cypress/reports']]
+			includeProperties: false, jdk: '', results: [[path: 'reports']]
 			])
 			}
            }

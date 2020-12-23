@@ -13,7 +13,7 @@
     "start-server-and-test": "^1.11.6"
   },
   "scripts": {
-    "cypress": "cypress run --reporter junit --reporter-options 'mochaFile=results/my-test-output.xml,toConsole=true'",
+    "cypress": "cypress run --reporter junit --reporter-options 'mochaFile=reports/automated_testing_[hash].xml,toConsole=true'",
 	"test": "start-server-and-test serve http://ap-catering.td.com/ cypress",
 	"debug": "cypress open"
   },
