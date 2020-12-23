@@ -12,17 +12,17 @@ pipeline {
             steps {
                 bat 'npm run test'
                 echo 'e2e test process'
-           }
-        }
-        stage('Deploy') {
-            steps {
-                println "Deploy"
                 archiveArtifacts 'mochawesome-report/*'
             script{
 			allure([
 			includeProperties: false, jdk: '', results: [[path: 'mochawesome-report']]
 			])
 			}
+           }
+        }
+        stage('Deploy') {
+            steps {
+                println "Deploy"
             }
         }
     }
