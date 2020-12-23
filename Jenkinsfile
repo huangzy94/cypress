@@ -13,6 +13,8 @@ pipeline {
                 bat 'npm run test'
                 echo 'e2e test process'
                 archiveArtifacts 'mochawesome-report/*'
+                archiveArtifacts 'mochawesome-report/assets/*'
+                archiveArtifacts 'cypress/screenshots/Catering/catering_login.js/*.png'
             script{
 			allure([
 			includeProperties: false, jdk: '', results: [[path: 'mochawesome-report']]
