@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat 'npm run test'
-				archiveArtifacts 'mochawesome-report'
+				archiveArtifacts 'mochawesome-report/*'
                 echo 'e2e test process'
 			script{
 			allure([
