@@ -10,16 +10,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat 'npm run test'
+                bat 'npm run test'                          // 执行package.jsom的脚本
                 echo 'e2e test process'
-                archiveArtifacts 'mochawesome-report/*'
-                archiveArtifacts 'mochawesome-report/assets/*'
-                archiveArtifacts 'cypress/screenshots/Catering/catering_login.js/*.png'
-            script{
-			allure([
-			includeProperties: false, jdk: '', results: [[path: 'mochawesome-report']]
-			])
-			}
            }
         }
         stage('Deploy') {
@@ -28,8 +20,14 @@ pipeline {
             }
         }
     }
-    post {
+    post {      // 构建结束后操作
+     always{    
+                archiveArtifacts 'cypress/videos/Catering/*.mp4'
+     }
      failure{
+                archiveArtifacts 'cypress/screenshots/Catering/catering_login.js/*.png'
+                archiveArtifacts 'mochawesome-report/assets/*'
+                archiveArtifacts 'mochawesome-report/*'
             script{
                 emailext attachLog: true,
                 // 邮件模板这里的引号一定要注意写对（坑）
@@ -37,8 +35,8 @@ pipeline {
                 mimeType: 'text/html',
                 charset:'UTF-8',
                 // PlatformGroup #10 构建失败
-                subject: "${currentBuild.fullDisplayName} 构建失败",
-                to: '18655174391@163.com'
+                subject: "Jenkins构建通知 - $PROJECT_NAME-${currentBuild.fullDisplayName} - $BUILD_STATUS!",
+                to: '13683339705@163.com'
          }
      }
  }
