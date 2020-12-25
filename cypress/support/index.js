@@ -29,7 +29,7 @@ beforeEach(function() {                                        // 每个用例�
     superior : 'superior01'
   }
   
-  const password = 'su123456'
+  const password = 'su1234567'
     cy.visit('/user/login')
       const url = window.location.hostname
       // cy.log(url);                                          // 获取页面地址

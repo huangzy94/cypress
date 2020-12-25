@@ -29,14 +29,14 @@ pipeline {
                 archiveArtifacts 'mochawesome-report/assets/*'
                 archiveArtifacts 'mochawesome-report/*'
             script{
+                // 附件中携带构建LOG
                 emailext attachLog: true,
-                // 邮件模板这里的引号一定要注意写对（坑）
-                body: '''${SCRIPT, template="groovy-html.template"}''',
+                body: '您的UI自动化测试项目貌似失败了，详情请查看附件',
                 mimeType: 'text/html',
                 charset:'UTF-8',
-                // PlatformGroup #10 构建失败
+                // 构建失败通知
                 subject: "Jenkins构建通知 - $PROJECT_NAME-${currentBuild.fullDisplayName} - $BUILD_STATUS!",
-                to: '13683339705@163.com'
+                to: '13683339705@163.com,huangzy94@dingtalk.com'
          }
      }
  }
