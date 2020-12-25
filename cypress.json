@@ -1,6 +1,6 @@
 {
   "projectId": "ity4o6",
-  "baseUrl": "http://ap-catering.td.com",
+  "baseUrl": "http://ap-catering.uanla.com",
   "reporter": "mochawesome",
   "reporterOptions": {
     "mochaFile": "mochawesome-report",
