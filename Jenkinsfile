@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'npm i'
+                bat 'npm i'								   // bat命令用于windows环境，sh用于linux环境
 				echo 'build process'
             }
         }
