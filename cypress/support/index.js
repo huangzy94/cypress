@@ -60,7 +60,7 @@ beforeEach(function() {                                        // 每个用例�
       cy.get('#password').type(password)
       cy.get('#vcCode').type('801b')
       // cy.pause()                                            // 暂停操作，等待用户手动操作
-      cy.get('.ant-btn').click()
+      cy.contains('登 录').click()
         .should('have.text','登 录')                           // 验证是否包含文本 登 录
         .should('have.contain','登 录')
       // cy.viewport('iphone-8')
