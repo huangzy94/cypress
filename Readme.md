@@ -1,21 +1,23 @@
 安装命令：npm install cypress --save-dev
-运行报错：cypress\node_modules\.bin目录下的cypress文件删除掉，新建一个同名文件夹cypress即可
 
-![image-20201221142615009](C:\Users\hzy\AppData\Roaming\Typora\typora-user-images\image-20201221142615009.png)
 
 ##### 1、启动可视化页面：
 
-> ​	先移动到cypress同目录 node_modules\.bin文件夹 打开cmd面板，进入该目录启动程序
-> ​	cmd进入目录：cypress\node_modules\.bin
-> ​	启动命令：cypress open
+> ​	cypress根目录的package.json中维护脚本启动命令，可自定义命令关键词，以debug为例。cmd命令行输入启动命令  npm run debug  
 
-![image-20201221143646177](C:\Users\hzy\AppData\Roaming\Typora\typora-user-images\image-20201221143646177.png)
+![image-20210119153558058](C:\Users\hzy\AppData\Roaming\Typora\typora-user-images\image-20210119153558058.png)
+
+![image-20210119153803177](C:\Users\hzy\AppData\Roaming\Typora\typora-user-images\image-20210119153803177.png)
 
 2、cypress.json文件中可配置baseUrl，package.json文件中可维护脚本		
 
-> "cypress": "cypress run",
+> "baseUrl": "http://ap-catering-v2.td.com",
+>
+> npm run test
 
-![image-20201221144006464](C:\Users\hzy\AppData\Roaming\Typora\typora-user-images\image-20201221144006464.png)
+![image-20210119153853279](C:\Users\hzy\AppData\Roaming\Typora\typora-user-images\image-20210119153853279.png)
+
+![image-20210119154257568](C:\Users\hzy\AppData\Roaming\Typora\typora-user-images\image-20210119154257568.png)
 
 3、以Mochawesome测试报告方式运行
 
