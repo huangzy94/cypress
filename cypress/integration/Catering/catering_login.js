@@ -494,7 +494,7 @@ describe('餐饮单位',function(){                                // 测试套�
 
     })
 
-      it.only('结算台账',function(){
+      it('结算台账',function(){
         // 进入查询统计模块
         cy.contains('结算台账').click()
         cy.get('#date').click()                                                         // 选择开始日期
