@@ -189,7 +189,7 @@ describe('餐饮单位',function(){                                // 测试套�
                   .rightclick()                                                  // 鼠标悬浮
                 cy.wait(700)
                 cy.log('模拟鼠标悬浮动作')
-                  cy.contains('查看详情').click()
+                  cy.contains('查看详情').click().wait(500)
                   cy.contains('使 用').click()                                   // 使用模板
                     .wait(500)
 
@@ -236,8 +236,8 @@ describe('餐饮单位',function(){                                // 测试套�
         // 菜单模板
         cy.contains('菜单模板')
           .click()
-          cy.wait(300)
-          cy.contains('创建模板').click()                                   // 创建模板
+          cy.wait(500)
+          cy.contains('创建模板').click().wait(500)                         // 创建模板
           cy.get('#templateName').type('cypress automated testing')
           cy.contains('添加')
             .type('自动化脚本')
@@ -470,7 +470,7 @@ describe('餐饮单位',function(){                                // 测试套�
                   cy.get('[title=' + localYMD + ']').click()
                   cy.get('.ant-card-extra > .ant-btn').click().wait(1000)                     // 查询
                   cy.get('.ant-pro-footer-bar-right > .ant-btn-primary')
-                    .click().wait(1200)                                                        // 生成结算单
+                    .click().wait(1500)                                                        // 生成结算单
 
         // 发送&撤回结算单
         cy.get(':nth-child(1) > :nth-child(8) > .control-active').click()
