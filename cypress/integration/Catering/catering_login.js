@@ -103,8 +103,11 @@ describe('餐饮单位',function(){                                // 测试套�
         cy.contains('菜单中心').click()                                     // 菜单中心模块
           cy.wait(700)
           cy.contains('我的菜单').click()                                   // 我的菜单tab页
-            cy.contains('新建').click()                                     // 新建自定义菜单
-              cy.contains('自定义').click()
+            .wait(500)
+            cy.contains('新建').rightclick()                                // 新建自定义菜单，鼠标悬浮
+              .wait(1000)
+              cy.contains('自定义')
+                .click()
               
               // 添加标签
                 cy.contains('添加')
@@ -132,7 +135,7 @@ describe('餐饮单位',function(){                                // 测试套�
                   cy.get('#keywords')
                       .type("西瓜")
                       cy.get('.ant-input-group-addon > .ant-btn')               // 查询
-                      .click()
+                        .click().wait(500)
                   cy.get(':nth-child(4) > .ant-btn > span')                     // 添加
                       .click()
                   cy.get('.footer___2Bf7W > .ant-btn-primary')                  // 保存
@@ -209,7 +212,7 @@ describe('餐饮单位',function(){                                // 测试套�
                     cy.wait(1000)
 
               // 菜单生成订单
-              cy.get('.ant-btn-primary').click()
+              cy.contains('保 存').click()
               // 添加订单备注                          
               cy.get('a > .anticon > svg')
                 .click()
@@ -224,11 +227,10 @@ describe('餐饮单位',function(){                                // 测试套�
 
       it('菜单中心-菜单模板',function(){
         cy.contains('菜单中心').click()                                     // 菜单中心模块
-          .click()
           cy.wait(700)
           cy.contains('我的菜单')                                           // 我的菜单tab页
             .click().wait(500)
-            cy.contains('删除').click().wait(700)
+            cy.contains('删除').click().wait(1000)
             cy.contains('确 定').click()                                    // 删除模板导入生成的菜单
 
         // 菜单模板
@@ -254,7 +256,7 @@ describe('餐饮单位',function(){                                // 测试套�
               cy.get('.ant-input-group-addon > .ant-btn')               // 查询
               .click()
           cy.get(':nth-child(4) > .ant-btn > span')                     // 添加
-              .click()
+              .click().wait(500)
           cy.get('.footer___2Bf7W > .ant-btn-primary')                  // 保存
               .click()
               cy.contains('保 存').click().wait(500)
@@ -306,14 +308,14 @@ describe('餐饮单位',function(){                                // 测试套�
           cy.get('.shoppingCartIcon___RI_rP > .ant-badge').click()
 
         // 生成采购单
-        cy.contains('生成采购单').click().wait(300) // bf77d3f0c39e2a094ec14c6f7ad6c996
-          cy.contains('替换').click()
+        cy.contains('生成采购单').click().wait(300)
+          cy.contains('替换').click().wait(700)
           cy.get('[data-row-key="159978ff9fa0e13568df99acd1d8d813"] > :nth-child(5) > a')
             .click()                                                                  // 添加
             cy.get('[style="text-align: right;"] > .ant-btn-primary').click()         // 保存
 
         // 采购数量
-        cy.get(':nth-child(4) > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-number > .ant-input-number-input-wrap > .ant-input-number-input')
+        cy.get(':nth-child(4) > .ant-input-number')
           .type(20)
           cy.contains("保 存").click().wait(600)                            // 生成订单
 
@@ -346,7 +348,7 @@ describe('餐饮单位',function(){                                // 测试套�
             cy.get('[style="text-align: right;"] > .ant-btn-primary').click()
 
         // 采购数量
-        cy.get(':nth-child(4) > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-number > .ant-input-number-input-wrap > .ant-input-number-input')
+        cy.get(':nth-child(4) > .ant-input-number > .ant-input-number-input-wrap > .ant-input-number-input')
               .type(20)
 
         // 添加其他日期
@@ -363,7 +365,7 @@ describe('餐饮单位',function(){                                // 测试套�
             cy.get('[style="text-align: right;"] > .ant-btn-primary').click()
 
         // 采购数量
-        cy.get(':nth-child(4) > .ant-row > .ant-col > .ant-form-item-control-input > .ant-form-item-control-input-content > .ant-input-number > .ant-input-number-input-wrap > .ant-input-number-input')
+        cy.get(':nth-child(4) > .ant-input-number > .ant-input-number-input-wrap > .ant-input-number-input')
           .type(20)
 
         // 保存订单
@@ -436,7 +438,7 @@ describe('餐饮单位',function(){                                // 测试套�
                   cy.contains('返 回').click().wait(300)                                      // 返回到列表页
       
         // 待验收TAB
-        cy.get('#rc-tabs-2-tab-2').click()
+        cy.contains('待验收').click()
         cy.get('.ant-radio-group > :nth-child(1)').click()                                    // 筛选全部
           cy.contains('-010').click()
           cy.contains('手动验收').click()
@@ -468,7 +470,7 @@ describe('餐饮单位',function(){                                // 测试套�
                   cy.get('[title=' + localYMD + ']').click()
                   cy.get('.ant-card-extra > .ant-btn').click().wait(1000)                     // 查询
                   cy.get('.ant-pro-footer-bar-right > .ant-btn-primary')
-                    .click().wait(1000)                                                        // 生成结算单
+                    .click().wait(1200)                                                        // 生成结算单
 
         // 发送&撤回结算单
         cy.get(':nth-child(1) > :nth-child(8) > .control-active').click()
@@ -494,7 +496,7 @@ describe('餐饮单位',function(){                                // 测试套�
 
     })
 
-      it('结算台账',function(){
+      it.skip('结算台账',function(){
         // 进入查询统计模块
         cy.contains('结算台账').click()
         cy.get('#date').click()                                                         // 选择开始日期
