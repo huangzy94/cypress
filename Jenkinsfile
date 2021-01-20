@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'npm i'								   // bat命令用于windows环境，sh用于linux环境
+                sh 'npm i'								   // bat命令用于windows环境，sh用于linux环境
 				echo 'build process'
             }
         }
         stage('Test') {
             steps {
-                bat 'npm run test'                          // 执行package.json的Scripts
+                sh 'npm run test'                          // 执行package.json的Scripts
                 echo 'e2e test process'
            }
         }
@@ -23,8 +23,8 @@ pipeline {
     post {      // 构建结束后操作
      always{    // 无论构建结果失败与否，都执行
                 archiveArtifacts 'cypress/videos/Catering/*.mp4'     // archiveArtifacts 指添加%WORKSPACE%文件
-                attachmentsPattern 'mochawesome-report/assets/*'
-                attachmentsPattern 'mochawesome-report/*'   
+                archiveArtifacts 'mochawesome-report/assets/*'
+                archiveArtifacts 'mochawesome-report/*'   
      }
      failure{   // 构建结果为失败时执行
             script{
