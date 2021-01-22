@@ -254,7 +254,7 @@ describe('餐饮单位',function(){                                // 测试套�
           cy.get('#keywords')
               .type("西瓜")
               cy.get('.ant-input-group-addon > .ant-btn')               // 查询
-              .click()
+              .click().wait(500)
           cy.get(':nth-child(4) > .ant-btn > span')                     // 添加
               .click().wait(500)
           cy.get('.footer___2Bf7W > .ant-btn-primary')                  // 保存
@@ -474,7 +474,7 @@ describe('餐饮单位',function(){                                // 测试套�
 
         // 发送&撤回结算单
         cy.get(':nth-child(1) > :nth-child(8) > .control-active').click()
-          .wait(500)
+          .wait(700)
             cy.contains('确 定').click().wait(1200)
         cy.contains('撤回').click()
             cy.contains('确 定').click()
